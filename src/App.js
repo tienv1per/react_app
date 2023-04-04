@@ -4,6 +4,8 @@ import Nav from './views/Nav.js';
 import { useState } from 'react';
 import Todo from './views/Todo';
 import Covid from './views/Covid';
+import Blog from './views/Blog';
+import BlogDetail from './views/BlogDetail';
 import {
   BrowserRouter as Router,
   Routes,
@@ -52,7 +54,7 @@ const App = () => { //class
         </header>
 
         <Routes>
-          <Route path="/" exact element={
+          <Route path="/" exact="true" element={
             <div>
               <h1>Hello world with React and {name}!</h1>
               <Todo 
@@ -65,6 +67,8 @@ const App = () => { //class
             } 
           />
           <Route path="covid/" element={<Covid />} />
+          <Route path="blogs/" element={<Blog/>} exact="true" />
+          <Route path="blog/:id" element={<BlogDetail/>} />
       </Routes>
       </div>
     </Router>
