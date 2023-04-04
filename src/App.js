@@ -1,14 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 import Nav from './views/Nav.js';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Todo from './views/Todo';
 import Covid from './views/Covid';
 import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link,
 } from "react-router-dom";
 
 // template + logic
@@ -21,21 +20,21 @@ const App = () => { //class
   let [name, setName] = useState('TheShy'); //[a1, b1, c1....]
   const [address, setAddress] = useState('');
   const [todos, setTodos] = useState([
-    { id: 'todo1', title: 'Watching Hoi Dan IT Channel', type: 'eric' },
-    { id: 'todo2', title: 'Doing homework', type: 'eric' },
-    { id: 'todo3', title: 'Playing game', type: 'hoidanit' },
-    { id: 'todo4', title: 'Reading books', type: 'hoidanit' }
+    { id: 'todo1', title: 'Watching Netflix and Chill', type: 'shy' },
+    { id: 'todo2', title: 'Doing homework', type: 'shy' },
+    { id: 'todo3', title: 'Playing game', type: 'shy' },
+    { id: 'todo4', title: 'Reading books', type: 'tien' }
   ]);
 
 
   const handleEventClick = (event) => {
     if (!address) {
-      alert('emtpy input')
+      alert('emtpy input');
       return;
     }
     //hook not merge state
     //...spread syntax array js
-    let newTodo = { id: 'abc', title: address, type: 'eric' }
+    let newTodo = { id: 'abc', title: address, type: 'shy' }
     setTodos([...todos, newTodo])
     setAddress('')
   }

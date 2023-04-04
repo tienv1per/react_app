@@ -1,13 +1,18 @@
 import '../views/Nav.scss';
+import { NavLink } from 'react-router-dom';
 
 
 const Nav = () => {
+    const status = ({ isActive, isPending }) => {
+        return isActive ? "active" : ""
+    };
+
     return (
         <div className="topnav">
-            <a className="active" href="/">Home</a>
-            <a href="/covid">Covid</a>
-            <a href="#contact">Contact</a>
-            <a href="#about">About</a>
+            <NavLink className={status} to="/" exact="true">Home</NavLink>
+            <NavLink className={status} to="/covid">Covid</NavLink>
+            <NavLink className={status} to="/test">Contact</NavLink>
+            <NavLink className={status} to="/about">About</NavLink>
         </div>
     );
 }
