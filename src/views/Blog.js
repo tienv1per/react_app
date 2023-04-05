@@ -5,9 +5,8 @@ const Blog = () => {
     const url = 'https://jsonplaceholder.typicode.com/posts';
     let {data, isLoading} = useFetch(url, false);
     if(data && data.length > 0){
-        data = data.slice(90);
+        data = data.slice(88);
     }
-    console.log(123);
 
     return (
         <div className="blogs-container">
@@ -17,7 +16,7 @@ const Blog = () => {
                     <div className="single-blog" key={item.id}>
                         <div className="title">{item.title}</div>
                         <div className="content">{item.body}</div>
-                        <button>
+                        <button style={{border: '3px solid grey'}}>
                             <Link to={`/blog/${item.id}`}>View Detail</Link>
                         </button>
                     </div>
@@ -25,7 +24,7 @@ const Blog = () => {
             })}
 
             {isLoading === true &&
-                <div style={{ textAlign: 'center !important' }}>Loading data...</div>
+                <div style={{ textAlign: 'center !important', width: '100%' }}>Loading data...</div>
             }
         </div>
 

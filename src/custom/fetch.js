@@ -46,7 +46,7 @@ const useFetch = (url, isCovidData) => {
 
         setTimeout(() => {
             fetchData();
-        }, 2000);
+        }, 1000);
 
         return () => {
             controller.abort();

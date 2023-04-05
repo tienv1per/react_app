@@ -11,6 +11,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+// import { CacheRoute, CacheSwitch } from 'react-router-cache-route';
 
 // template + logic
 // JSX
@@ -34,8 +35,7 @@ const App = () => { //class
       alert('emtpy input');
       return;
     }
-    //hook not merge state
-    //...spread syntax array js
+
     let newTodo = { id: 'abc', title: address, type: 'shy' }
     setTodos([...todos, newTodo])
     setAddress('')
