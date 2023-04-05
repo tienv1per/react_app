@@ -56,14 +56,14 @@ const App = () => { //class
 
         <Routes>
           <Route path="/" exact="true" element={
-            <div>
+            <div style={{display: ''}}>
               <h1>Hello world with React and {name}!</h1>
               <Todo 
                 todos={todos} 
                 title={'All todos'}
               />
-              <input type="text" value={address} onChange={(event) => handleOnchangeInput(event)} />
-              <button type="button" onClick={(event) => handleEventClick(event)}>Add Todos</button>
+              <input className='input-pro' style={{margin: '10px 5px', display: 'inline', width: '40%'}} type="text" value={address} onChange={(event) => handleOnchangeInput(event)} />
+              <button className='button-pro' type="button" onClick={(event) => handleEventClick(event)}>Add Todos</button>
             </div>
             } 
           />

@@ -1,14 +1,27 @@
 import { useState } from "react";
+import axios from "axios";
 
-const AddNewBlog = () => {
+const AddNewBlog = (props) => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
 
-    const handleSubmit = () => {
+    const handleSubmit = async() => {
         if(!title) return alert('title shit');
         if(!content) return alert('content shit');
-        console.log(title);
-        console.log(content);
+
+        let data = {
+            title: title,
+            body: content, 
+            userId: 1,
+        }
+
+        let res = await axios.post('https://jsonplaceholder.typicode.com/posts', data);
+        if(res && res.data){
+            let blogData = res.data;
+            props.handleAddNew(blogData);
+            console.log(blogData);
+        }
+        
     }
 
     return (
@@ -16,14 +29,14 @@ const AddNewBlog = () => {
             <div style={{padding: '20px'}}>
                 <label className="label-pro">Title: </label>
                 <input className="input-pro" type="text" 
-                    style={{width: '50%', display: 'inline'}} 
+                    style={{width: '233px', display: 'inline'}} 
                     value={title} onChange={(event) => setTitle(event.target.value)}/>
             </div>
 
             <div>
-                <label className="label-pro">Content: </label>
+                <label className="label-pro" style={{margin: '0 20px'}}>Content: </label>
                 <input className="input-pro" type="text" 
-                    style={{width: '50%', display: 'inline'}} 
+                    style={{width: '50%', display: 'inline', margin: '0 20px'}} 
                     value={content} onChange={(event) => setContent(event.target.value)}/>
             </div>
 
