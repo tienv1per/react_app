@@ -27,6 +27,12 @@ const Blog = () => {
         data.unshift(blog);
     }
 
+    const deleteBlog = (id) => {
+        let data = newData;
+        data = data.filter(item => item.id !== id);
+        setNewData(data);
+    }
+
     return (
         <div>
             <Button variant="primary" className="my-3 button-pro" onClick={handleShow}>
@@ -49,6 +55,9 @@ const Blog = () => {
                             <div className="content">{item.body}</div>
                             <button className="button-pro">
                                 <Link to={`/blog/${item.id}`}>View Detail</Link>
+                            </button>
+                            <button  className="button-pro" onClick={() => deleteBlog(item.id)}>
+                                Delete Blog
                             </button>
                         </div>
                     )

@@ -62,7 +62,7 @@ const App = () => { //class
                 todos={todos} 
                 title={'All todos'}
               />
-              <input className='input-pro' style={{margin: '10px 5px', display: 'inline', width: '40%'}} type="text" value={address} onChange={(event) => handleOnchangeInput(event)} />
+              <input className='input-pro' style={{margin: '10px 5px', display: 'inline', width: '25%'}} type="text" value={address} onChange={(event) => handleOnchangeInput(event)} />
               <button className='button-pro' type="button" onClick={(event) => handleEventClick(event)}>Add Todos</button>
             </div>
             } 
