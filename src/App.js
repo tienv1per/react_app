@@ -7,6 +7,8 @@ import Covid from './views/Covid';
 import Blog from './views/Blog';
 import BlogDetail from './views/BlogDetail';
 import AddNewBlog from './views/AddNewBlog';
+import About from './views/About';
+import NotFound from './views/NotFound';
 import {
   BrowserRouter as Router,
   Routes,
@@ -71,6 +73,8 @@ const App = () => { //class
           <Route path="blogs/" element={<Blog/>} exact="true" />
           <Route path="blog/:id" element={<BlogDetail/>} />
           <Route path="add-blog" element={<AddNewBlog/>} />
+          <Route path='about' element={<About/>} />
+          <Route path='*' element={<NotFound/>} />
       </Routes>
       </div>
     </Router>
