@@ -8,6 +8,7 @@ import Blog from './views/Blog';
 import BlogDetail from './views/BlogDetail';
 import AddNewBlog from './views/AddNewBlog';
 import About from './views/About';
+import YouTubeSearch from './views/YoutubeSearch';
 import NotFound from './views/NotFound';
 import {
   BrowserRouter as Router,
@@ -74,6 +75,7 @@ const App = () => { //class
           <Route path="blog/:id" element={<BlogDetail/>} />
           <Route path="add-blog" element={<AddNewBlog/>} />
           <Route path='about' element={<About/>} />
+          <Route path='youtube-search' element={<YouTubeSearch/>} />
           <Route path='*' element={<NotFound/>} />
       </Routes>
       </div>

@@ -4,7 +4,7 @@ import moment from 'moment';
 
 
 function Covid() {
-	const today = moment().startOf('day').toISOString(true);;
+	const today = moment().startOf('day').toISOString(true);
     const priorDate = moment().startOf('day').subtract(31, 'days').toISOString(true);;
 
 	const url = `https://api.covid19api.com/country/vietnam?from=${priorDate}&to=${today}`;

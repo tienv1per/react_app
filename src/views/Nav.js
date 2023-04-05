@@ -13,6 +13,7 @@ const Nav = () => {
             <NavLink className={status} to="/covid">Covid</NavLink>
             <NavLink className={status} to="/blogs">Blogs</NavLink>
             <NavLink className={status} to="/about">About</NavLink>
+            <NavLink className={status} to="/youtube-search">YouTube</NavLink>
         </div>
     );
 }
